@@ -1,0 +1,80 @@
+:root{
+  --color-primary: #33FFBD;
+}
+*{
+  box-sizing: border-box;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+html{
+  font-size: 10px;
+}
+body{
+  background: #363940;
+  min-height: 100vh;
+}
+/* Main div styles */
+.main{
+  height: 100vh;
+  max-height: 1024px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* Style of the div that contains the animation blocks */
+.animation{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 20rem;
+  height: 20rem;
+}
+/* Style of the divs of the animation blocks */
+.animation__block{
+  background: var(--color-primary);
+  animation-name: animation-block;
+  animation-duration: 1.6s;
+  animation-iteration-count: infinite;
+}
+/* The delay of the animations of the blocks  */
+.animation__block--one{
+  animation-delay: 1s;
+}
+.animation__block--two{
+  animation-delay: 1.5s;
+}
+.animation__block--three{
+  animation-delay: 2s;
+}
+.animation__block--four{
+  animation-delay: 1.5s;
+}
+.animation__block--five{
+  animation-delay: 1s;
+}
+/* Animation process */
+@keyframes animation-block{
+  /* 0% percent */
+  /* the block scale increases a bit */
+  0%{
+    transform: scale(1.1);
+  }
+  /* 25% percent */
+  /* the block scale is reduced to zero and the block gets a border */
+  25%{
+    border: 5px solid #ffffff;
+    transform: scale(0);
+  }
+  /* 50% percent */
+  /* the scale begins to return to normal */
+  50%{
+    transform: scale(1);
+  }
+  /* 100% percent */
+  /* the edges of the block start to disappear */
+  100%{
+    border: 0px;
+    transform: scale(1);
+  }
+}
